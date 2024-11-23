@@ -14,6 +14,16 @@ class UpdateUser(BaseModel):
     lastname: str
     age: int
 
+class UserResponse(BaseModel):
+    id: int
+    username: str
+    firstname: str
+    lastname: str
+    age: int
+    slug: str
+
+    class Config:
+        orm_mode = True
 
 # Схемы для задач
 class CreateTask(BaseModel):

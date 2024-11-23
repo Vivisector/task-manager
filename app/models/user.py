@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from app.backend.db import Base  # Импортируем базовый класс Base
-# from app.models.task import Task #импортировали класс Категории
+from app.models.task import Task
 
 class User(Base):
     __tablename__ = 'users'
@@ -15,5 +15,5 @@ class User(Base):
 
     tasks = relationship("Task", back_populates="user")
 
-from sqlalchemy.schema import CreateTable
-print(CreateTable(User.__table__))
+# from sqlalchemy.schema import CreateTable
+# print(CreateTable(User.__table__))

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from app.backend.db import Base  # Импортируем базовый класс Base
-from app.models.user import User #импортировали класс User
+# from app.models.user import User #импортировали класс User
 
 class Task(Base):
     __tablename__ = 'tasks'
@@ -16,6 +16,6 @@ class Task(Base):
 
     user = relationship("User", back_populates="tasks")
 
-from sqlalchemy.schema import CreateTable
-print(CreateTable(Task.__table__))
+# from sqlalchemy.schema import CreateTable
+# print(CreateTable(Task.__table__))
 
